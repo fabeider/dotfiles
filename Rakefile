@@ -16,7 +16,7 @@ task :install => [:submodule_init, :submodules] do
     # Rake::Task["install_vundle"].execute
   end
 
-  Rake::Task["install_prezto"].execute
+  # Rake::Task["install_prezto"].execute
 
   install_fonts
 
