@@ -11,6 +11,7 @@ task :install => [:submodule_init, :submodules] do
   puts
 
   # this has all the runcoms from this directory.
+  install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
