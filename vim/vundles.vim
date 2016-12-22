@@ -23,7 +23,8 @@ Bundle "gmarik/vundle"
 " runtime ruby.vundle
 runtime languages.vundle
 " runtime git.vundle
-" runtime appearance.vundle
+runtime appearance.vundle
+runtime node.vundle
 " runtime textobjects.vundle
 " runtime search.vundle
 " runtime project.vundle
