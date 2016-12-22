@@ -1,6 +1,6 @@
 require 'rake'
 require 'fileutils'
-# require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
+require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
 
 desc "Hook our dotfiles into system-standard positions."
 task :install => [:submodule_init, :submodules] do
@@ -13,7 +13,7 @@ task :install => [:submodule_init, :submodules] do
   # this has all the runcoms from this directory.
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc}'))
-    # Rake::Task["install_vundle"].execute
+    Rake::Task["install_vundle"].execute
   end
 
   # Rake::Task["install_prezto"].execute
@@ -95,7 +95,7 @@ task :install_vundle do
   unless File.exists?(vundle_path)
     run %{
       cd $HOME/.yadr
-      git clone https://github.com/gmarik/vundle.git #{vundle_path}
+      git clone https://github.com/VundleVim/vundle.vim.git #{vundle_path}
     }
   end
 
