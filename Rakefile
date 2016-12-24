@@ -12,6 +12,7 @@ task :install => [:submodule_init, :submodules] do
 
   # this has all the runcoms from this directory.
   install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
+  install_files(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
