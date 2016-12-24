@@ -18,7 +18,7 @@ task :install => [:submodule_init, :submodules] do
     Rake::Task["install_vundle"].execute
   end
 
-  # Rake::Task["install_prezto"].execute
+  Rake::Task["install_prezto"].execute
 
   install_fonts
 
@@ -26,12 +26,20 @@ task :install => [:submodule_init, :submodules] do
 
   run_bundle_config
 
+#  Rake::Task["install_laptop_script"].execute
+
   success_msg("installed")
 end
 
 task :install_prezto do
   if want_to_install?('zsh enhancements & prezto')
     install_prezto
+  end
+end
+
+task :install_laptop_script do
+  if want_to_install?('binaries and dev')
+    install_laptop_script 
   end
 end
 
@@ -247,6 +255,13 @@ def ask(message, values)
   selection = selection.to_i-1
   values[selection]
 end
+
+def install_laptop_script 
+  puts
+  puts "Installing Thoughtbot laptop script"
+  run %{ sh laptop/mac}
+end
+  
 
 def install_prezto
   puts
