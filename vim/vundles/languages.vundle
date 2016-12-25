@@ -1,1 +1,4 @@
 Bundle 'sheerun/vim-polyglot'
+Bundle 'garbas/vim-snipmate.git'
+Bundle 'honza/vim-snippets'
+Bundle 'scrooloose/syntastic.git'
