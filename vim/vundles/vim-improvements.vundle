@@ -1,2 +1,3 @@
 Bundle "MarcWeber/vim-addon-mw-utils.git"
 Bundle "tomtom/tlib_vim.git"
+Bundle "vim-scripts/AutoTag.git"
